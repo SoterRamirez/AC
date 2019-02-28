@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/estiloVida.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <title>Juego de la Vida</title>
+  </head>
+  <body>
+    <!-- Nav -->
+    <nav class="sticky-top navbar navbar-expand-lg navbar-light bg-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="#">Soter Ramirez</a>
+          
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+              <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
+                </li>
+              </ul>
+              <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Holis :)" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">No hago nada</button>
+              </form>
+            </div>
+          </nav>
+    <!--El juego de la vida-->
+    <div class="container">
+      <h1 class="display-3">A.C. El juego de la vida</h1>
+      <div class="alert alert-primary" role="alert">
+        El contenido esta hecho en JS, para ver más variables, inspeccione la pagina y vea consola (click derecho inspeccionar pagina ) <br>
+        Instrucciones: <br>
+        Región = Ancho,limitar a tamaño de una pantalla, se dejan valores por default. <br>
+        Columnas= Largo, limitar a tamaño de una pantalla, se dejan valores por default. <br>
+        Tamaño=  Zoom de la figura, limitar menor a 8, se puede poner el valor que desee, pero la ram vuela. <br>
+        Vida inicial= la vida inicial maxima es de 0.1330, si se pone enteros explota.
+
+      </div>
+      <div class="row" id="parametros">
+        <div class="col-md-auto">
+          <label class="text-success" for="renglones">Renglones:</label>
+          <input id="renglones" value="85" />
+        </div>
+        <div class="col-md-auto">
+          <label class="text-success" for="columnas">Columnas:</label>
+          <input id="columnas" value="200" />
+        </div>
+        <div class="col-md-auto">
+          <label class="text-success" for="tamanio">Tamaño de las células</label>
+          <input id="tamanio" value="4" />
+        </div>
+        <div class="col-md-auto">
+          <label class="text-success" for="porcentaje">Vida inicial:</label>
+          <input id="porcentaje" value="0.100" />
+        </div>
+      </div>
+      <br>
+      <!--Controles-->
+      <div class="row justify-content-center"id="controles">
+            <div class="col-sm-auto">
+            <button type="button" class="iniciar btn btn-outline-primary btn-lg">Comenzar Tiempo</button>
+            </div>
+            <div class="col-sm-auto">
+            <button type="button" class="detener btn btn-outline-secondary btn-lg">Pausar Tiempo</button>
+            </div>
+            <div class="col-sm-auto">
+            <button type="button" class="tick btn btn-outline-success btn-lg">Hacer Tick</button>              
+            </div>
+            <div class="col-sm-auto">
+            <button type="button" class="reiniciar btn btn-outline-danger btn-lg">Reiniciar</button>
+            </div>
+          </div>
+              <!--Canvas dibujo-->
+      <div class="row justify-content-center" id="dibujo">
+        <canvas
+          id="mapa"
+          width="100"
+          height="100"
+          class="rounded border border-primary""
+        >
+        </canvas>
+        <!--Datos-->
+      <div id="informacion">          
+            <p class="informacion alert alert-warning alert-dismissible fade show" role="alert"><strong>Generación:</strong> 0</p>
+          </div>
+      </div>
+    </div>
+    <script src="./js/jquery-2.1.1.min.js"></script>
+    <script src="./js/calculosVitales.js"></script>
+    <script src="./js/controlJS.js"></script>
+    <script src="./js/jquery-2.1.1.min.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+</body>
+</html>
